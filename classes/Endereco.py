@@ -17,7 +17,7 @@ class Endereco:
     para o contrutor que consulta o cep para encontrar o endereço.
     '''
 
-    def __init__(self, cep, numero ,rua='', estado='', cidade='', complemento=''):
+    def __init__(self, cep, numero ,rua='', estado='', cidade='', complemento='', end_entrega='', end_faturamento=''):
 
         if (rua == '') or (estado == '') or (cidade == ''):
             end_json = self.consultar_cep(cep)
@@ -60,6 +60,12 @@ class Endereco:
         # converte a resposta json em dict
         json_resp = response.json()
         return json_resp
+
+
+    def __str__(self):
+        return self.rua
+
+
 
 
 

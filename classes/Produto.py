@@ -9,6 +9,22 @@
 
 
 class Produto:
+    lista = []
 
     def __init__(self, id='', nome=''):
-        pass
+        self.id = id
+        self.nome = nome
+        Produto.lista.append(self)
+
+    def __str__(self):
+        self.nome 
+    
+    def busca_nome(nome):
+        resultado = []
+        for produto in Produto.lista:
+            if nome in produto.nome: 
+                resultado.append(produto)
+        return resultado
+
+    def get_id(self):
+        return self.id
