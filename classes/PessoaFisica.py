@@ -32,12 +32,13 @@ class PessoaFisica:
         pass
 
     def get_endereco(self, apelido_endereco):
-        pass
+        if apelido_endereco in self.__enderecos:
+            return self.__enderecos[apelido_endereco].rua
     
     def busca_nome(nome):
         resultado = []
         for pessoa in PessoaFisica.lista_pessoas:
-            if nome in pessoa.nome:
+            if nome.lower() in pessoa.nome.lower():
                 resultado.append(pessoa)
         return resultado
 

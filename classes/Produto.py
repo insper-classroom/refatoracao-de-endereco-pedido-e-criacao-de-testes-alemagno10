@@ -15,16 +15,16 @@ class Produto:
         self.id = id
         self.nome = nome
         Produto.lista.append(self)
-
-    def __str__(self):
-        self.nome 
     
     def busca_nome(nome):
         resultado = []
         for produto in Produto.lista:
-            if nome in produto.nome: 
+            if nome.lower() in produto.nome.lower(): 
                 resultado.append(produto)
         return resultado
 
     def get_id(self):
         return self.id
+    
+    def __str__(self):
+        return self.nome

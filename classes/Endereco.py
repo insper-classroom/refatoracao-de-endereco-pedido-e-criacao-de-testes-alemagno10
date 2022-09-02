@@ -20,7 +20,7 @@ class Endereco:
     def __init__(self, cep, numero ,rua='', estado='', cidade='', complemento='', end_entrega='', end_faturamento=''):
 
         if (rua == '') or (estado == '') or (cidade == ''):
-            end_json = self.consultar_cep(cep)
+            end_json = Endereco.consultar_cep(cep)
 
             self.rua = end_json['logradouro']
             self.estado = end_json['uf']
@@ -39,7 +39,7 @@ class Endereco:
             self.cep = str(cep)
 
 
-    def consultar_cep(self, cep):
+    def consultar_cep(cep):
         '''
         Metodo realiza a consulta do cep em uma api publica para obter informações
         como estado, cidade e rua
@@ -48,7 +48,7 @@ class Endereco:
 
         # end point da API de consulta ao cep
         url_api = f'https://viacep.com.br/ws/{str(cep)}/json/'
-
+        
         # Sem corpo na requisição
         # Não é necessario nenhum cabeçalho HTTP especial
         payload = {}
@@ -58,12 +58,19 @@ class Endereco:
         response = requests.request("GET", url_api, headers=headers, data=payload)
 
         # converte a resposta json em dict
-        json_resp = response.json()
+
+        try: json_resp = response.json()
+        except: return False
+
+
+        if json_resp == {'erro': 'true'}:
+            return False
         return json_resp
 
 
+
     def __str__(self):
-        return self.rua
+        return f"{self.rua} n°{self.numero} ({self.estado})"
 
 
 
