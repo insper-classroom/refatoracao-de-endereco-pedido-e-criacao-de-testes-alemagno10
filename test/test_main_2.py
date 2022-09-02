@@ -49,7 +49,10 @@ def test_cria_pedido():
 @pytest.mark.main2
 @pytest.mark.main3
 def test_pagamento():
-    pag = Pagamento()
+    pessoa1 = PessoaFisica('Carlos Magno', 'magno@email.com', '524.222.452-6')
+    carrinho = Carrinho()
+    pedido = Pedido()
+    pag = Pagamento(pedido)
     assert pag.processa_pagamento() == True
 
 

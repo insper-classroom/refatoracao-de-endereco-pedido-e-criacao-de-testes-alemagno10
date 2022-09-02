@@ -10,6 +10,7 @@ def test_cria_objeto():
     assert user.cpf == '000.000.000-00'
 
 @pytest.mark.pessoa
+@pytest.mark.main3
 def test_busca_nome():
     user1 = PessoaFisica('Alexandre Magno', 'ale@gmail.com', '000.000.000-00')
     resultado = PessoaFisica.busca_nome('Ale')

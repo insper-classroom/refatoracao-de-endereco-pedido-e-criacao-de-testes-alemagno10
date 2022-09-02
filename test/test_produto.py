@@ -9,6 +9,7 @@ def test_cria_objeto():
     assert prod.nome == 'BoardMaster'
 
 @pytest.mark.produto
+@pytest.mark.main3
 def test_busca_nome():
     prod = Produto('79', 'BoardMaster')
     resultado = Produto.busca_nome('Master')

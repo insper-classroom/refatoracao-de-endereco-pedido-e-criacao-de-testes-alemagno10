@@ -35,7 +35,7 @@ def test_cep_nao_existente():
     assert end == False
 
 @pytest.mark.endereco
-def test_internet_nao_conectada():
-    with requests.exceptions.ConnectionError as connection:
-        Endereco.consultar_cep()
-        assert '' in str(connection.value)
+def test_internet_nao_conectada():  
+    with pytest.raises(requests.exceptions.ConnectionError) as connection:
+        Endereco.consultar_cep('08320330')
+    assert 'Max retries exceeded with url' in str(connection.value)
