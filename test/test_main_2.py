@@ -51,8 +51,9 @@ def test_cria_pedido():
 def test_pagamento():
     pessoa1 = PessoaFisica('Carlos Magno', 'magno@email.com', '524.222.452-6')
     carrinho = Carrinho()
-    pedido = Pedido()
+    pedido = Pedido(pessoa1,carrinho)
     pag = Pagamento(pedido)
-    assert pag.processa_pagamento() == True
+
+    assert pag.pagamento_aprovado() == True
 
 

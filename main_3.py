@@ -26,7 +26,6 @@ print(end1)
 # Cria um outro endereço
 end2 = Endereco('04546042', 300)
 print(end2)
-
 # Adiciona endereço à pessoa
 pessoa1.adicionar_endereco('casa', end1)
 
@@ -64,6 +63,7 @@ if len(ends) > 0:
 # Lembre-se de adicionar estes atributos ao endereço
 pedido.endereco_entrega = copy.deepcopy(endereco) 
 pedido.endereco_faturamento = copy.deepcopy(endereco)
+print('aaaaaaa' , pedido.endereco_entrega)
 
 
 pag = Pagamento(pedido)

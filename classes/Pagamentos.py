@@ -6,7 +6,7 @@ class Pagamento:
         pass 
 
     # Função dummy que sempre dá o pagamento como aprovado
-    def pagamento_aprovado():
+    def pagamento_aprovado(self):
         return True
 
     
