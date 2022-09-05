@@ -63,7 +63,6 @@ if len(ends) > 0:
 # Lembre-se de adicionar estes atributos ao endereço
 pedido.endereco_entrega = copy.deepcopy(endereco) 
 pedido.endereco_faturamento = copy.deepcopy(endereco)
-print('aaaaaaa' , pedido.endereco_entrega)
 
 
 pag = Pagamento(pedido)

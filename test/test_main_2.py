@@ -19,7 +19,8 @@ def test_add_endereco():
     end1 = Endereco('08320330', 430)
 
     pessoa1.adicionar_endereco('casa', end1)
-    assert f'{pessoa1.listar_enderecos().keys()}' == "dict_keys(['casa'])"
+    dicio = pessoa1.listar_enderecos()
+    assert dicio['casa'].rua == "Rua Clemente Falcão"
 
 @pytest.mark.main2
 @pytest.mark.main3

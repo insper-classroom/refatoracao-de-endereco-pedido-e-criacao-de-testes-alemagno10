@@ -37,4 +37,4 @@ def test_add_endereco_e_listar_endereco():
 
     user1.adicionar_endereco('inspi', end)
     ends = user1.listar_enderecos()
-    assert f'{ends.keys()}' == "dict_keys(['inspi'])"
+    assert ends['inspi'].rua == 'Rua Quatá'
